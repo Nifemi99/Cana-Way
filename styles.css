@@ -55,7 +55,8 @@ p { margin: 0; line-height: 1.6; color: var(--gray-600); }
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding-inline: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .icon { width: 1em; height: 1em; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
@@ -139,11 +140,11 @@ section.tight { padding: 56px 0; }
 }
 
 .hero-bg-photo {
-  position: absolute; inset: 0; width: 100%; height: 100%;
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;
   object-fit: cover; object-position: 30% 40%; z-index: 0;
 }
 .hero.has-photo::after {
-  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 1; pointer-events: none;
   background: linear-gradient(180deg, rgba(4,20,35,0.32) 0%, rgba(4,20,35,0.12) 30%, rgba(4,20,35,0.28) 65%, rgba(4,20,35,0.6) 100%);
 }
 
@@ -215,7 +216,8 @@ section.tight { padding: 56px 0; }
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   max-width: var(--container);
-  margin-inline: auto;
+  margin-left: auto;
+  margin-right: auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
@@ -248,14 +250,14 @@ section.tight { padding: 56px 0; }
 }
 .photo-tile.has-photo .icon-lg { display: none; }
 .tile-photo {
-  position: absolute; inset: 0; width: 100%; height: 100%;
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;
   object-fit: cover; object-position: center; z-index: 0;
 }
 .photo-tile::after {
-  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 1; pointer-events: none;
   background: linear-gradient(180deg, rgba(4,16,28,0.38) 0%, rgba(4,16,28,0) 26%, rgba(4,16,28,0) 48%, rgba(4,16,28,0.75) 100%);
 }
-.photo-tile .tile-pattern { position: absolute; inset: 0; opacity: 0.18; z-index: 1; }
+.photo-tile .tile-pattern { position: absolute; top: 0; right: 0; bottom: 0; left: 0; opacity: 0.18; z-index: 1; }
 .photo-tile .pill { position: absolute; top: 12px; left: 12px; z-index: 2; box-shadow: 0 2px 10px rgba(0,0,0,0.18); }
 
 .grad-sunrise { background: linear-gradient(135deg, #ff9a56, #ff6b95); }
@@ -399,7 +401,7 @@ section.tight { padding: 56px 0; }
 
 /* ===================== MODAL ===================== */
 .modal-overlay {
-  position: fixed; inset: 0; background: rgba(8, 26, 48, 0.55); backdrop-filter: blur(4px);
+  position: fixed; top: 0; right: 0; bottom: 0; left: 0; background: rgba(8, 26, 48, 0.55); backdrop-filter: blur(4px);
   display: flex; align-items: flex-end; justify-content: center; z-index: 1000;
   opacity: 0; pointer-events: none; transition: opacity 0.25s ease;
 }
@@ -425,7 +427,7 @@ section.tight { padding: 56px 0; }
 .modal-hero.has-photo .icon-lg { display: none; }
 .modal-hero .tile-photo { z-index: 0; }
 .modal-hero::after {
-  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 1; pointer-events: none;
   background: linear-gradient(180deg, rgba(4,16,28,0.42) 0%, rgba(4,16,28,0) 24%, rgba(4,16,28,0) 46%, rgba(4,16,28,0.8) 100%);
 }
 .modal-close {
