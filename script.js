@@ -180,7 +180,7 @@ const DAYS = [
 function renderItinerary() {
   const grid = document.getElementById("itineraryGrid");
   grid.innerHTML = DAYS.map((d, i) => `
-    <button class="card day-card" data-index="${i}">
+    <div class="card day-card" data-index="${i}" role="button" tabindex="0">
       <div class="photo-tile ${d.gradient}${d.photo ? " has-photo" : ""}">
         ${d.photo ? `<img class="tile-photo" src="${d.photo}" alt="${d.title}">` : ""}
         <span class="pill light">${d.tag}</span>
@@ -196,11 +196,17 @@ function renderItinerary() {
         <p class="day-summary">${d.summary}</p>
         <span class="day-cta">Full details <svg class="icon"><use href="#icon-chevron"></use></svg></span>
       </div>
-    </button>
+    </div>
   `).join("");
 
   grid.querySelectorAll(".day-card").forEach(card => {
     card.addEventListener("click", () => openModal(Number(card.dataset.index)));
+    card.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openModal(Number(card.dataset.index));
+      }
+    });
   });
 }
 
