@@ -154,7 +154,8 @@
     </div>
     <div class="grid cols-2" id="stayGrid">
       <div class="card stay-card">
-        <div class="photo-tile grad-ocean">
+        <div class="photo-tile grad-ocean has-photo">
+          <img class="tile-photo" src="assets/photos/airbnb-1.jpg" alt="Balcony view over the pool at Airbnb 1, Los Corales">
           <span class="pill light">Sep 22 – 25 · 3 nights</span>
           <svg class="icon icon-lg"><use href="#icon-home"></use></svg>
         </div>
@@ -169,7 +170,8 @@
         </div>
       </div>
       <div class="card stay-card">
-        <div class="photo-tile grad-dusk">
+        <div class="photo-tile grad-dusk has-photo">
+          <img class="tile-photo" src="assets/photos/airbnb-2.jpg" alt="Pool and terrace at Airbnb 2, near Downtown Punta Cana">
           <span class="pill light">Sep 25 – 29 · 4 nights</span>
           <svg class="icon icon-lg"><use href="#icon-home"></use></svg>
         </div>
@@ -241,7 +243,10 @@
         </div>
       </div>
       <div class="card lowcost-card">
-        <div class="photo-tile grad-coral"><svg class="icon icon-lg"><use href="#icon-bowling"></use></svg></div>
+        <div class="photo-tile grad-coral has-photo">
+          <img class="tile-photo" src="assets/photos/bowling.jpg" alt="Bowling lanes at a Punta Cana resort">
+          <svg class="icon icon-lg"><use href="#icon-bowling"></use></svg>
+        </div>
         <div class="lowcost-body">
           <h4>Bowling — Barceló Bávaro Palace or The Boulevard (Lopesan Costa Bávaro)</h4>
           <div class="lowcost-row"><span><svg class="icon"><use href="#icon-dollar"></use></svg> Cost</span><strong>Usually under $50</strong></div>
@@ -404,6 +409,7 @@
 <div class="modal-overlay" id="dayModal">
   <div class="modal-panel">
     <div class="modal-hero" id="modalHero">
+      <img class="tile-photo" id="modalHeroImg" src="" alt="" hidden>
       <button class="modal-close" id="modalClose"><svg class="icon"><use href="#icon-close"></use></svg></button>
       <span class="pill light" id="modalPillTag"></span>
       <svg class="icon icon-lg"><use id="modalIconUse" href="#icon-boat"></use></svg>

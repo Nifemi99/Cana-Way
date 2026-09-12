@@ -35,6 +35,7 @@ const DAYS = [
     tag: "Adventure",
     icon: "scuba",
     gradient: "grad-ocean",
+    photo: "assets/photos/jetski-watercraft.jpg",
     time: "8 AM – 1 PM",
     transport: "20–35 min each way",
     summary: "An underwater scooter adventure just off the coast, then back to Los Corales to dry off and relax.",
@@ -135,6 +136,7 @@ const DAYS = [
     tag: "Adventure",
     icon: "atv",
     gradient: "grad-dune",
+    photo: "assets/photos/atv-adventure.jpg",
     time: "8 AM – 1 PM",
     transport: "About 30–40 min each way",
     summary: "Off-road ATVs, a cool-down swim in a cenote, then a wind-down at Playa Macao.",
@@ -173,7 +175,8 @@ function renderItinerary() {
   const grid = document.getElementById("itineraryGrid");
   grid.innerHTML = DAYS.map((d, i) => `
     <button class="card day-card" data-index="${i}">
-      <div class="photo-tile ${d.gradient}">
+      <div class="photo-tile ${d.gradient}${d.photo ? " has-photo" : ""}">
+        ${d.photo ? `<img class="tile-photo" src="${d.photo}" alt="${d.title}">` : ""}
         <span class="pill light">${d.tag}</span>
         <svg class="icon icon-lg"><use href="#icon-${d.icon}"></use></svg>
         <span class="day-num">${String(d.num).padStart(2, "0")}</span>
@@ -206,7 +209,16 @@ function mapEmbedSrc(origin, destination) {
 function openModal(index) {
   const d = DAYS[index];
 
-  document.getElementById("modalHero").className = `modal-hero ${d.gradient}`;
+  document.getElementById("modalHero").className = `modal-hero ${d.gradient}${d.photo ? " has-photo" : ""}`;
+  const modalHeroImg = document.getElementById("modalHeroImg");
+  if (d.photo) {
+    modalHeroImg.src = d.photo;
+    modalHeroImg.alt = d.title;
+    modalHeroImg.hidden = false;
+  } else {
+    modalHeroImg.hidden = true;
+    modalHeroImg.src = "";
+  }
   document.getElementById("modalPillTag").textContent = d.tag;
   document.getElementById("modalIconUse").setAttribute("href", `#icon-${d.icon}`);
   document.getElementById("modalDate").textContent = d.date;
