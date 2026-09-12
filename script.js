@@ -15,6 +15,7 @@ const DAYS = [
     tag: "Arrival Day",
     icon: "basket",
     gradient: "grad-sunrise",
+    photo: "assets/photos/los-corales-beach.jpg",
     time: "Flexible",
     transport: "PUJ → Airbnb 1: 25–35 min",
     summary: "Touch down, settle into Airbnb 1, and stock up for the week at Sirena Market before an easy first sunset on the sand.",
