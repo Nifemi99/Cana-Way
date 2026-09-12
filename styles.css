@@ -239,8 +239,9 @@ section.tight { padding: 56px 0; }
 /* ===================== PHOTO TILE (illustrated, replaces stock photos) ===================== */
 .photo-tile {
   position: relative; border-radius: var(--radius-md) var(--radius-md) 0 0;
-  aspect-ratio: 4 / 3; overflow: hidden;
+  overflow: hidden;
 }
+.photo-tile::before { content: ""; display: block; padding-top: 75%; }
 .photo-tile .icon-lg {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;
   width: 46%; height: 46%; color: rgba(255,255,255,0.95); filter: drop-shadow(0 6px 14px rgba(0,0,0,0.18));
@@ -283,7 +284,7 @@ section.tight { padding: 56px 0; }
 
 /* ===================== ACCOMMODATION ===================== */
 .stay-card { display: flex; flex-direction: column; }
-.stay-card .photo-tile { aspect-ratio: 16/10; }
+.stay-card .photo-tile::before { padding-top: 62.5%; }
 .stay-body { padding: 22px; }
 .stay-body .stay-dates { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 700; color: var(--teal-600); margin-bottom: 8px; }
 .stay-body h3 { font-size: 1.25rem; margin-bottom: 6px; }
@@ -314,7 +315,7 @@ section.tight { padding: 56px 0; }
 
 /* ===================== LOW-COST GRID ===================== */
 .lowcost-card { display: flex; flex-direction: column; }
-.lowcost-card .photo-tile { aspect-ratio: 16/11; }
+.lowcost-card .photo-tile::before { padding-top: 68.75%; }
 .lowcost-body { padding: 16px 18px 20px; }
 .lowcost-body h4 { font-size: 1rem; margin-bottom: 8px; line-height: 1.3; }
 .lowcost-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; color: var(--gray-600); margin-top: 4px; }
@@ -418,7 +419,8 @@ section.tight { padding: 56px 0; }
   .modal-overlay.open .modal-panel { transform: translateY(0) scale(1); }
 }
 
-.modal-hero { position: relative; aspect-ratio: 16/8; overflow: hidden; }
+.modal-hero { position: relative; overflow: hidden; }
+.modal-hero::before { content: ""; display: block; padding-top: 50%; }
 .modal-hero .icon-lg { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; width: 30%; height: 30%; color: rgba(255,255,255,0.95); filter: drop-shadow(0 6px 14px rgba(0,0,0,0.2)); }
 .modal-hero.has-photo .icon-lg { display: none; }
 .modal-hero .tile-photo { z-index: 0; }
